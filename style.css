@@ -1,0 +1,316 @@
+html {
+            box-sizing: border-box;
+            font-size: 62.5%;
+            height: 100%;
+          }
+          *, *:after, *:before {
+            box-sizing: inherit;
+          }
+          
+          
+          body {
+            padding:0;
+            margin: 0;
+            height: 100%;
+          }
+          
+          
+          .sky {
+            background-color: #b3e0ff;
+            width: 100%;
+            height: 400px;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            -webkit-animation: skys 10s linear infinite;
+            animation: skys 10s linear infinite;
+          }
+          
+          .clouds {
+            position: absolute;
+            width: 200px;
+            height: 100px;
+            background-color: white;
+            border-radius: 50px;
+            -webkit-animation: move 3s linear infinite;
+            animation: move 3s linear infinite;
+            z-index: 3;
+          
+          }
+          
+          .clouds:after, .clouds:before {
+            content: "";
+            position: absolute;
+            border-radius: 50px;
+          }
+          
+          
+          .clouds:after {
+            background-color: white;
+            width: 100px;
+            height: 140px;
+            top: -20%;
+            left: 8%;
+            -webit-transform: rotate(-15deg);
+            -ms-transform: rotate(-15deg);
+            transform: rotate(-15deg);
+          }
+          
+          .clouds:before {
+            background-color: white;
+            width: 110px;
+            height: 160px;
+            top: -40%;
+            right: 10%;
+          }
+          
+          .cloud1 {
+            top: 2%;
+            left: 50%;
+            -webkit-animation: move 20s linear infinite;
+            animation: move 20s linear infinite;
+          }
+          
+          .cloud2 {
+            top: 10%;
+            left: 10%;
+            -webkit-animation: move 20s linear infinite;
+            animation: move 20s linear infinite;
+          }
+          
+          .cloud3 {
+            top: 20%;
+            left: 70%;
+            -webkit-animation: move 20s linear infinite;
+            animation: move 20s linear infinite;
+          }
+          
+          .cloud4 {
+            top: 30%;
+            left: 90%;
+            -webkit-animation: move 20s linear infinite;
+            animation: move 20s linear infinite;
+          }
+          
+          .sun {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background: #ff9900; 
+            background: -webkit-radial-gradient(#ff9900, yellow); 
+            background: -o-radial-gradient(#ff9900, yellow); 
+            background: -moz-radial-gradient(#ff9900, yellow); 
+            background: radial-gradient(#ff9900, yellow); 
+            border-radius: 100%;
+            box-shadow: 0 0 100px yellow;
+            top: 10%;
+            left: 50%;
+            -webkit-animation: sol 2s alternate infinite;
+            animation: sol 2s alternate infinite;
+            z-index: 2;
+            -webkit-animation: sunmove 10s linear infinite;
+            animation: sunmove 10s linear infinite;
+            
+          }
+          
+          .hom {
+            width: 100%;
+            background-color: black;
+            z-index: 6;
+            position: absolute;
+            top:0;
+            -webkit-animation: fade 10s linear infinite;
+            animation: fade 10s linear infinite;
+            height: 1000px;
+          }
+          
+          .earth {
+            width: 100%;
+            background-color: #006600;
+            z-index: 5;
+            -moz-box-shadow:    inset 0 0 300px #66ff66;
+            -webkit-box-shadow: inset 0 0 300px #66ff66;
+            box-shadow:         inset 0 0 300px #66ff66;
+            min-height: 100%;
+          }
+          
+          
+          /*ANIMATIONS*/
+          
+          /*move*/
+            @keyframes move {
+            0% {
+              opacity: 0;
+            }
+            20% {
+              opacity: 1;
+            }
+            50% {
+              top: 0;
+            }
+            100% {
+              opacity: 0;
+              left: 100%;
+            }
+          }
+            
+            @-webkit-keyframes move {
+            0% {
+              opacity: 0;
+            }
+            20% {
+              opacity: 1;
+            }
+            50% {
+              top: 0;
+            }
+            100% {
+              opacity: 0;
+              left: 100%;
+            }
+          }
+          
+          
+          
+          /*sol*/
+          @keyframes sol {
+            0% {
+              transform: scale(1.2,1.2);
+            }
+          }
+          @-webkit-keyframes sol {
+            0% {
+              transform: scale(1.2,1.2);
+            }
+          }
+          
+          
+          /*sunmove*/
+          @keyframes sunmove {
+            0% {
+              top: 100%;
+              left:0%;
+              width: 50px;
+              height: 50px;
+            }
+            50% {
+              top: 20%;
+              left: 30%;
+              width: 150px;
+              height: 150px;
+            }
+            
+            62%{
+               top: 10%;
+            }
+            
+            75% {
+              top: 20%;
+              left: 60%;
+              width: 150px;
+              height: 150px;
+            }
+            
+            100% {
+              top: 100%;
+              left:100%;
+              width: 50px;
+              height: 50px;
+            }
+          }
+          
+          @-webkit-keyframes sunmove {
+            0% {
+              top: 100%;
+              left:0%;
+              width: 50px;
+              height: 50px;
+            }
+            50% {
+              top: 20%;
+              left: 30%;
+              width: 150px;
+              height: 150px;
+            }
+            
+            62%{
+               top: 10%;
+            }
+            
+            75% {
+              top: 20%;
+              left: 60%;
+              width: 150px;
+              height: 150px;
+            }
+            
+            100% {
+              top: 100%;
+              left:100%;
+              width: 50px;
+              height: 50px;
+            }
+          }
+          
+          /*skys*/
+          @keyframes skys {
+            0% {
+              background-color: #00111a;
+            }
+              25% {
+               background-color: #b3e0ff;
+            }
+               75% {
+               background-color: #b3e0ff;
+            } 
+              100% {
+              background-color: #00111a;
+            }
+          }
+          
+          @-webkit-keyframes skys {
+            0% {
+              background-color: #00111a;
+            }
+              25% {
+               background-color: #b3e0ff;
+            }
+               75% {
+               background-color: #b3e0ff;
+            }  
+              100% {
+              background-color: #00111a;
+            }
+          }
+          
+          /*fade*/
+          @keyframes fade {
+            0% {
+              opacity: 1;
+            }
+            10% {
+              opacity: 0;
+            }
+            90% {
+              opacity: 0;
+            }
+            100 % {
+              opacity: 1;
+            }
+          }
+          
+          @-webkit-keyframes fade {
+            0% {
+              opacity: 1;
+            }
+            10% {
+              opacity: 0;
+            }
+            90% {
+              opacity: 0;
+            }
+            100 % {
+              opacity: 1;  
+          }
+            
+            
